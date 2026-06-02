@@ -29,7 +29,27 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 ---
 
 ## 💻 Program
+```
+class Fish:
+    def type(self):
+        print("fish")
 
-## Output
+class Shark(Fish):
+    def type(self):   # overriding method
+        print("shark")
 
-## Result
+# Creating objects
+obj_goldfish = Fish()
+obj_hammerhead = Shark()
+
+# Using loop
+for animal in (obj_goldfish, obj_hammerhead):
+    animal.type()
+```
+
+## OUTPUT
+<img width="626" height="355" alt="image" src="https://github.com/user-attachments/assets/6560f063-9726-47ec-a257-268e0a03b540" />
+
+
+## RESULT
+Thus, the program successfully demonstrates method overriding, where the child class Shark overrides the type() method of the parent class Fish.
