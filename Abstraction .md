@@ -30,26 +30,29 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 
 ## 💻 Program
 ```
-class Fish:
-    def type(self):
-        print("fish")
+from abc import ABC, abstractmethod
 
-class Shark(Fish):
-    def type(self):   # overriding method
-        print("shark")
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
 
-# Creating objects
-obj_goldfish = Fish()
-obj_hammerhead = Shark()
+class Rectangle(Shape):
+    def calculate_area(self):
+        return 5 * 4
 
-# Using loop
-for animal in (obj_goldfish, obj_hammerhead):
-    animal.type()
+class Circle(Shape):
+    def calculate_area(self):
+        return 3.14 * 7 * 7
+
+r = Rectangle()
+c = Circle()
+
+print("Rectangle Area:", r.calculate_area())
+print("Circle Area:", c.calculate_area())
 ```
-
 ## OUTPUT
-<img width="626" height="355" alt="image" src="https://github.com/user-attachments/assets/6560f063-9726-47ec-a257-268e0a03b540" />
-
+<img width="455" height="149" alt="image" src="https://github.com/user-attachments/assets/8cbc78ce-f599-4e52-ae4d-9aed49a641f3" />
 
 ## RESULT
-Thus, the program successfully demonstrates method overriding, where the child class Shark overrides the type() method of the parent class Fish.
+The abstract method calculate_area() was successfully implemented in Rectangle and Circle, and their areas were calculated correctly.
